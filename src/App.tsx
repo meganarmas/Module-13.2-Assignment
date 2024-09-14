@@ -1,24 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
+import UserInfo from './Component/UserInfo';
+import Card from './Component/Card';
+
 import './App.css';
 
 function App() {
+
+  const user = {
+    name: "Jack Shepherd",
+    age: 32,
+    email: 'jshepherd@gmail.com'
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Card>
+        <UserInfo
+        name={user.name}
+        age={user.age}
+        email={user.email} 
+        />
+      </Card>
+
+      <Card>
+        <h2>Utilizing Children Props</h2>
+        <p>This is task two completed!</p>
+      </Card>
     </div>
   );
 }
